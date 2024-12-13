@@ -24,6 +24,9 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	runtimeOnly("com.mysql:mysql-connector-j")
+	runtimeOnly("com.oracle.database.jdbc:ojdbc11")
+	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 }
 
 dependencyManagement {

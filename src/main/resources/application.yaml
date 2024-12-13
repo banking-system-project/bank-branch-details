@@ -1,6 +1,15 @@
 spring:
   application:
     name: BANK-BRANCH-DETAILS
+  datasource:
+    url: jdbc:oracle:thin:@192.168.0.133:1521:xe
+    username: prithwi
+    password: Dampy123
+    driver-class-name: oracle.jdbc.OracleDriver
+
+
+  main:
+    allow-circular-references: true
 eureka:
   instance:
     prefer-ip-address: true
