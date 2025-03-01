@@ -5,10 +5,14 @@ import com.bank.branch.mapper.GetBranchDetailsOutputMapper;
 import com.bank.branch.mapper.GetbranchDetailsSpecificMapper;
 import com.bank.branch.util.SqlQueriesConstants;
 import com.bank.branch.vo.BranchDetailsOutputVO;
+import com.bank.branch.vo.BranchNewDetailsOutputVO;
+import com.bank.branch.vo.NewBranchDetailsInputVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 @Repository
 public class BranchDetailsDAO {
@@ -28,5 +32,55 @@ public class BranchDetailsDAO {
             e.printStackTrace();
         }
         return getbranchDetailsSpecificMapper.branchDetailsOutputDTOtoVO(branchDetailsOutputDTOList);
+    }
+
+    public BranchDetailsOutputVO branchDetailsByIfscCode(String ifscCode) {
+        BranchDetailsOutputDTO branchDetailsOutputDTO = null;
+        try{
+            branchDetailsOutputDTO = (BranchDetailsOutputDTO) jdbcTemplate.queryForObject(SqlQueriesConstants.SQL_GET_BRANCH_DETAILS_BY_IFSC_CODE, new Object[] {ifscCode},getBranchDetailsOutputMapper);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return  getbranchDetailsSpecificMapper.branchDetailsOutputDTOtoVO(branchDetailsOutputDTO);
+    }
+
+    public BranchNewDetailsOutputVO addNewBranchDetails(NewBranchDetailsInputVO newBranchDetailsInputVO){
+        BranchNewDetailsOutputVO branchNewDetailsOutputVO = new BranchNewDetailsOutputVO();
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String currentTimeStamp = now.format(formatter);
+
+        int result=0;
+        System.out.println("In DAO layer");
+        try{
+            result = jdbcTemplate.update(
+                    SqlQueriesConstants.SQL_ADD_NEW_BRANCH_DETAILS,
+                    new Object[] {
+                            newBranchDetailsInputVO.getBranchInfoVO().getBankCode(),
+                            newBranchDetailsInputVO.getBranchInfoVO().getIfscCode(),
+                            newBranchDetailsInputVO.getBranchInfoVO().getBranchName(),
+                            newBranchDetailsInputVO.getBranchAddressVO().getAddress(),
+                            newBranchDetailsInputVO.getBranchAddressVO().getDistrict(),
+                            newBranchDetailsInputVO.getBranchAddressVO().getState(),
+                            newBranchDetailsInputVO.getBranchAddressVO().getPinCode(),
+                            newBranchDetailsInputVO.getBranchContactVO().getBankContactNo(),
+                            newBranchDetailsInputVO.getBranchContactVO().getBranchEmail(),
+                            currentTimeStamp
+                    }
+            );
+            if(result == 1){
+                System.out.println("done");
+                branchNewDetailsOutputVO.setStatusMsg("user details updated successfully");
+            }
+            else {
+                branchNewDetailsOutputVO.setStatusMsg("Something Wrong!!");
+            }
+
+        }catch (Exception e){
+            branchNewDetailsOutputVO.setStatusMsg(e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+
+        return branchNewDetailsOutputVO;
     }
 }

@@ -27,6 +27,7 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 	runtimeOnly("com.oracle.database.jdbc:ojdbc11")
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
+	implementation ("org.springframework.boot:spring-boot-starter-actuator")
 }
 
 dependencyManagement {

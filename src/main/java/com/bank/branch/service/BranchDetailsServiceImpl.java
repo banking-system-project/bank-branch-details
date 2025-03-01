@@ -1,10 +1,7 @@
 package com.bank.branch.service;
 
 import com.bank.branch.bo.BranchDetailsBO;
-import com.bank.branch.vo.BranchAddressVO;
-import com.bank.branch.vo.BranchContactVO;
-import com.bank.branch.vo.BranchDetailsOutputVO;
-import com.bank.branch.vo.NewBranchDetailsInputVO;
+import com.bank.branch.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,21 +17,24 @@ public class BranchDetailsServiceImpl implements BranchDetailsService{
 
     @Override
     public BranchDetailsOutputVO branchDetailsByIfscCode(String ifscCode) {
-        return null;
+        return branchDetailsBO.branchDetailsByIfscCode(ifscCode);
     }
 
     @Override
     public BranchContactVO branchContactByIfscCode(String ifscCode) {
-        return null;
+        BranchDetailsOutputVO branchDetailsOutputVO = branchDetailsBO.branchDetailsByIfscCode(ifscCode);
+        return branchDetailsOutputVO.getBranchContactVO();
     }
 
     @Override
     public BranchAddressVO branchAddressByIfscCode(String ifscCode) {
-        return null;
+        BranchDetailsOutputVO branchDetailsOutputVO = branchDetailsBO.branchDetailsByIfscCode(ifscCode);
+        return branchDetailsOutputVO.getBranchAddressVO();
     }
 
     @Override
-    public BranchDetailsOutputVO addNewBranchDetail(NewBranchDetailsInputVO newBranchDetailsInputVO) {
-        return null;
+    public BranchNewDetailsOutputVO addNewBranchDetail(NewBranchDetailsInputVO newBranchDetailsInputVO) {
+        BranchNewDetailsOutputVO branchNewDetailsOutputVO = branchDetailsBO.addNewBranchDetails(newBranchDetailsInputVO);
+        return branchNewDetailsOutputVO;
     }
 }

@@ -47,4 +47,30 @@ public class GetbranchDetailsSpecificMapper {
         }
         return list;
     }
+
+    public BranchDetailsOutputVO branchDetailsOutputDTOtoVO(BranchDetailsOutputDTO branchDetailsOutputDTO){
+        BranchAddressVO branchAddressVO=new BranchAddressVO();
+        BranchContactVO branchContactVO=new BranchContactVO();
+        BranchInfoVO branchInfoVO=new BranchInfoVO();
+        BranchDetailsOutputVO branchDetailsOutputVO=new BranchDetailsOutputVO();
+        //map address details
+
+        branchAddressVO.setAddress(branchDetailsOutputDTO.getAddress());
+        branchAddressVO.setDistrict(branchDetailsOutputDTO.getDistrict());
+        branchAddressVO.setState(branchDetailsOutputDTO.getState());
+        branchAddressVO.setPinCode(branchDetailsOutputDTO.getPinCode());
+        //map contact details
+        branchContactVO.setBranchEmail(branchDetailsOutputDTO.getBranchEmail());
+        branchContactVO.setBankContactNo(branchDetailsOutputDTO.getBankContactNo());
+        //map info details
+        branchInfoVO.setBranchName(branchDetailsOutputDTO.getBranchName());
+        branchInfoVO.setBankCode(branchDetailsOutputDTO.getBankCode());
+        branchInfoVO.setIfscCode(branchDetailsOutputDTO.getIfscCode());
+
+        branchDetailsOutputVO.setBranchAddressVO(branchAddressVO);
+        branchDetailsOutputVO.setBranchInfoVO(branchInfoVO);
+        branchDetailsOutputVO.setBranchContactVO(branchContactVO);
+
+        return branchDetailsOutputVO;
+    }
 }
