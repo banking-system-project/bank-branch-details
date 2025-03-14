@@ -1,10 +1,10 @@
-package com.bank.branch.mapper;
+package com.bank.account.info.mapper;
 
-import com.bank.branch.dto.BranchDetailsOutputDTO;
-import com.bank.branch.vo.BranchAddressVO;
-import com.bank.branch.vo.BranchContactVO;
-import com.bank.branch.vo.BranchDetailsOutputVO;
-import com.bank.branch.vo.BranchInfoVO;
+import com.bank.account.info.dto.BranchDetailsOutputDTO;
+import com.bank.account.info.vo.BranchAddressVO;
+import com.bank.account.info.vo.BranchContactVO;
+import com.bank.account.info.vo.BranchDetailsOutputVO;
+import com.bank.account.info.vo.BranchInfoVO;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.bank.branch.dto;
+package com.bank.account.info.dto;
 
 import java.util.Date;
 

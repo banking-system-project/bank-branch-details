@@ -1,6 +1,6 @@
-package com.bank.branch.mapper;
+package com.bank.account.info.mapper;
 
-import com.bank.branch.dto.BranchDetailsOutputDTO;
+import com.bank.account.info.dto.BranchDetailsOutputDTO;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 

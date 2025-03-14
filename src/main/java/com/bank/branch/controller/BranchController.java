@@ -1,6 +1,7 @@
-package com.bank.branch.controller;
+package com.bank.account.info.controller;
 
-import com.bank.branch.service.BranchDetailsServiceImpl;
+import com.bank.account.info.service.BranchDetailsServiceImpl;
+import com.bank.account.info.vo.*;
 import com.bank.branch.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

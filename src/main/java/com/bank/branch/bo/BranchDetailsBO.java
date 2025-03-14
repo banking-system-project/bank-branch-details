@@ -1,9 +1,9 @@
-package com.bank.branch.bo;
+package com.bank.account.info.bo;
 
-import com.bank.branch.eo.BranchDetailsEO;
-import com.bank.branch.vo.BranchDetailsOutputVO;
-import com.bank.branch.vo.BranchNewDetailsOutputVO;
-import com.bank.branch.vo.NewBranchDetailsInputVO;
+import com.bank.account.info.eo.BranchDetailsEO;
+import com.bank.account.info.vo.BranchDetailsOutputVO;
+import com.bank.account.info.vo.BranchNewDetailsOutputVO;
+import com.bank.account.info.vo.NewBranchDetailsInputVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
