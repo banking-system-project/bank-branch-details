@@ -1,9 +1,9 @@
-package com.bank.account.info.util;
+package com.bank.branch.util;
 
 public class SqlQueriesConstants {
-    public static final String SQL_GET_BRANCH_DETAILS="SELECT * FROM BRANCH_DETAILS";
-    public static final String SQL_GET_BRANCH_DETAILS_BY_IFSC_CODE = "SELECT * FROM BRANCH_DETAILS WHERE IFSC_CODE = ?";
-    public static final String SQL_ADD_NEW_BRANCH_DETAILS = "INSERT INTO BRANCH_DETAILS " +
-            "(BANK_CODE, IFSC_CODE, BRANCH_NAME, ADDRESS, DISTRICT, STATE, PIN_CODE, BANK_CONTACT, BRANCH_EMAIL, DATE_OF_ISSUE)" +
+    public static final String SQL_GET_BRANCH_DETAILS="SELECT * FROM branch_details";
+    public static final String SQL_GET_BRANCH_DETAILS_BY_IFSC_CODE = "SELECT * FROM branch_details WHERE ifsc_code = ?";
+    public static final String SQL_ADD_NEW_BRANCH_DETAILS = "INSERT INTO branch_details " +
+            "(bank_code, ifsc_code, branch_name, address, district, state, pin_code, bank_contact, branch_email, date_of_issue)" +
             "VALUES (?,?,?,?,?,?,?,?,?,?)";
 }

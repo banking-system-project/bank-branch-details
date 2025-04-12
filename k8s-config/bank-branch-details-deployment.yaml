@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: bank-branch-details-service
-          image: prithwi8972/bank-branch-details-service:1.0
+          image: prithwi8972/bank-branch-details-service:1.0.0
           resources:
             limits:
               memory: "900Mi"
@@ -28,7 +28,7 @@ spec:
               memory: "700Mi"
               cpu: 300m
           ports:
-            - containerPort: 8090
+            - containerPort: 8091
           env:
             - name: DB_HOST
               valueFrom:
@@ -46,13 +46,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bank-branch-details-svc
+  name: bank-branch-details
 spec:
   selector:
     app: banking-system
   ports:
-    - port: 8090
-      targetPort: 8090
+    - port: 8091
+      targetPort: 8091
 ---
 
 apiVersion: v1

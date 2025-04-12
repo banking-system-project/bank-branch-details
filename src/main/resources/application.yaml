@@ -2,7 +2,7 @@ spring:
   application:
     name: BANK-BRANCH-DETAILS
   datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:3307/bank_data
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/banking_data
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver

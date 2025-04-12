@@ -1,4 +1,4 @@
-package com.bank.account.info.vo;
+package com.bank.branch.vo;
 
 public class BranchDetailsOutputVO {
     private BranchAddressVO branchAddressVO;

@@ -1,12 +1,12 @@
-package com.bank.account.info.dao;
+package com.bank.branch.dao;
 
-import com.bank.account.info.dto.BranchDetailsOutputDTO;
-import com.bank.account.info.mapper.GetBranchDetailsOutputMapper;
-import com.bank.account.info.mapper.GetbranchDetailsSpecificMapper;
-import com.bank.account.info.util.SqlQueriesConstants;
-import com.bank.account.info.vo.BranchDetailsOutputVO;
-import com.bank.account.info.vo.BranchNewDetailsOutputVO;
-import com.bank.account.info.vo.NewBranchDetailsInputVO;
+import com.bank.branch.dto.BranchDetailsOutputDTO;
+import com.bank.branch.mapper.GetBranchDetailsOutputMapper;
+import com.bank.branch.mapper.GetbranchDetailsSpecificMapper;
+import com.bank.branch.util.SqlQueriesConstants;
+import com.bank.branch.vo.BranchDetailsOutputVO;
+import com.bank.branch.vo.BranchNewDetailsOutputVO;
+import com.bank.branch.vo.NewBranchDetailsInputVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

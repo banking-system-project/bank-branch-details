@@ -1,7 +1,6 @@
-package com.bank.account.info.controller;
+package com.bank.branch.controller;
 
-import com.bank.account.info.service.BranchDetailsServiceImpl;
-import com.bank.account.info.vo.*;
+import com.bank.branch.service.BranchDetailsServiceImpl;
 import com.bank.branch.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,10 +15,6 @@ public class BranchController {
 
     @Autowired
     BranchDetailsServiceImpl branchDetailsService;
-    @GetMapping("/test")
-    public String test(){
-        return "Hello world";
-    }
 
     @PostMapping("/getAllBranchDetails")
     public ResponseEntity<Object> getAllBranchDetails() {
