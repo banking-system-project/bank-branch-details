@@ -1,7 +1,7 @@
 plugins {
 	java
-	id("org.springframework.boot") version "3.3.3"
-	id("io.spring.dependency-management") version "1.1.6"
+	id("org.springframework.boot") version "3.4.5"
+	id("io.spring.dependency-management") version "1.1.7"
 }
 
 group = "com.bank.branch"
@@ -17,7 +17,7 @@ repositories {
 	mavenCentral()
 }
 
-extra["springCloudVersion"] = "2023.0.3"
+extra["springCloudVersion"] = "2024.0.1"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -28,6 +28,8 @@ dependencies {
 	runtimeOnly("com.oracle.database.jdbc:ojdbc11")
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	implementation ("org.springframework.boot:spring-boot-starter-actuator")
+	implementation ("org.springframework.kafka:spring-kafka")
+	testImplementation ("org.springframework.kafka:spring-kafka-test")
 }
 
 dependencyManagement {
