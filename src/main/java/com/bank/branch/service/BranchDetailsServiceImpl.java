@@ -15,6 +15,7 @@ public class BranchDetailsServiceImpl implements BranchDetailsService{
 
     @Autowired
     public BranchDetailsBO branchDetailsBO;
+
     public List<BranchDetailsOutputVO> getAllBranchDetails() {
         log.info("service layer: calling to get all branch details");
         return branchDetailsBO.getAllBranchDetails();

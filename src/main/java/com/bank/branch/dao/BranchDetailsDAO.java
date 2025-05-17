@@ -85,7 +85,7 @@ public class BranchDetailsDAO {
             );
             if(result == 1){
                 log.info("dao layer: branch details added successfully");
-                branchNewDetailsOutputVO.setStatusMsg("branch details updated successfully");
+                branchNewDetailsOutputVO.setStatusMsg(newBranchDetailsInputVO.getBranchInfoVO().getBranchName()+" branch details added successfully");
             }
             else {
                 log.error("dao layer: error in adding branch details");
